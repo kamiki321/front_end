@@ -30,7 +30,7 @@ const Register = () => {
         password: data.get('password'),
       });
 
-      await axios.post('http://localhost:1224/register', {
+      await axios.post(`${procces.env.REACT_APP_BACKEND_URL}/register`, {
         username: data.get('username'),
         email: data.get('email'),
         password: data.get('password'),
