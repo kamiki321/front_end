@@ -51,7 +51,7 @@ const Home = () => {
 
         const verify = async() =>{
             try {
-              const response = await axios.post('http://localhost:1224/verify', {
+              const response = await axios.post(`${procces.env.REACT_APP_BACKEND_URL}/verify`, {
                 token: localStorage.getItem('token')
               })
               if(response.status == 200){
