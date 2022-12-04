@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import NotFound from './not-found';
+import {render, screen, cleanup} from '@testing-library/react'
+import NotFound from './not-found'
 
-test('renders learn react link', () => {
-  render(<NotFound/>);
-  const linkElement = screen.getByText(/404/i);
-  expect(linkElement).toBeInTheDocument();
-});
+afterEach(()=>{
+    cleanup();
+})
+
+test('check', ()=>{
+    render(<NotFound/>)
+    const todoElement = screen.getByText('404 Error')
+    expect(todoElement).toHaveTextContent('404 Error')
+})

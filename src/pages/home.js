@@ -40,7 +40,7 @@ const Home = () => {
 
         // 2. Lempar ke halaman login bila user atau token tidak ada
         if(token=''||!token){
-            return navigate('../login')
+            return navigate('/login')
         }
 
         // 3. definisikan fungsi verifikasi token
@@ -51,7 +51,7 @@ const Home = () => {
 
         const verify = async() =>{
             try {
-              const response = await axios.post(`${procces.env.REACT_APP_BACKEND_URL}/verify`, {
+              const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/verify`, {
                 token: localStorage.getItem('token')
               })
               if(response.status == 200){
@@ -73,7 +73,8 @@ const Home = () => {
     const handleToHome = () => {
         window.location.href = '/';
     };
-if(!isLogin) {
+
+    if(!isLogin) {
         return (
             <ThemeProvider theme={theme}>
                 <Container component="main" maxWidth="xs">
