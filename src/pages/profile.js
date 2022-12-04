@@ -32,9 +32,9 @@ const Profile = () => {
 
     // Default user, ganti dengan data user yang didapat dari localstorage
     const [user, setUser] = React.useState({
-        id: 1,
-        name: 'MHadi',
-        email: 'm.hadi@gmail.com'
+       id : 5;
+       username : 'adriel' ;
+       email : 'adriel@gmail.com' ;
     })
 
     // Modifikasi kode di bawah ini untuk mengambil data dari localstorage
